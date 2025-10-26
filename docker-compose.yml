@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_PATH=/data/app.db
+    volumes:
+      - dbdata:/data
+volumes:
+  dbdata:

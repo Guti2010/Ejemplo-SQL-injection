@@ -1,0 +1,25 @@
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.25);
+}
+
+.bg-gradient {
+  min-height: 100vh;
+  background: radial-gradient(1200px 600px at 10% 10%, #1f3b50 0%, transparent 60%),
+              radial-gradient(900px 500px at 90% 30%, #3b1f50 0%, transparent 60%),
+              radial-gradient(1000px 600px at 50% 100%, #1f503b 0%, transparent 60%),
+              #0b1220;
+}
+
+.glassy {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

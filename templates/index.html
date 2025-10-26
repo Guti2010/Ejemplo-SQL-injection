@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card glassy shadow-lg border-0">
+        <div class="card-body p-5">
+          <h2 class="mb-3 fw-bold"><i class="bi bi-window-sidebar"></i> SQL Injection – Demo visual</h2>
+          <p class="text-secondary mb-4">
+            Compara un login <span class="text-danger fw-semibold">vulnerable</span> (concatena strings)
+            versus un login <span class="text-success fw-semibold">seguro</span> (parametrizado).
+          </p>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="p-4 rounded-4 border border-danger-subtle h-100">
+                <h5 class="fw-semibold text-danger"><i class="bi bi-bug"></i> /login-vuln</h5>
+                <p class="mb-3">Acepta un payload como <code>admin' OR 1=1 --</code> y permite el acceso.</p>
+                <a class="btn btn-outline-danger w-100" href="/login-vuln">Probar vulnerable</a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-4 rounded-4 border border-success-subtle h-100">
+                <h5 class="fw-semibold text-success"><i class="bi bi-check2-circle"></i> /login-safe</h5>
+                <p class="mb-3">Mismo payload no funciona: la consulta usa <em>placeholders</em> <code>?</code>.</p>
+                <a class="btn btn-success w-100" href="/login-safe">Probar seguro</a>
+              </div>
+            </div>
+          </div>
+          <hr class="my-4"/>
+          <p class="small text-secondary mb-0">
+            Recomendación: usar consultas parametrizadas y validar entradas (OWASP). :contentReference[oaicite:4]{index=4}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
